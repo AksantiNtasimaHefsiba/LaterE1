@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTerE — Laboratoire & SCITERRA (Journal Scientifique)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        latere: {
+                            forest: '#0f382c',
+                            navy: '#1a365d',
+                            gold: '#c59b27',
+                            sand: '#f7f5f0',
+                            clay: '#8c4a27',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-latere-sand text-slate-800 font-sans antialiased">
+
+    <!-- BARRE DE NAVIGATION UNIFIÉE -->
+    <nav class="sticky top-0 z-50 bg-latere-forest text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-latere-gold text-latere-forest flex items-center justify-center font-bold rounded-lg text-2xl shadow-inner">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight block leading-tight">LaTerE & SCITERRA</span>
+                        <span class="text-xs text-amber-200 tracking-wider">Laboratoire & Revue Scientifique</span>
+                    </div>
+                </div>
+                
+                <div class="hidden xl:flex items-center space-x-4 text-sm font-medium">
+                    <a href="#accueil" class="hover:text-latere-gold transition">Accueil</a>
+                    <a href="#axes" class="hover:text-latere-gold transition">Axes</a>
+                    <a href="#offres" class="hover:text-latere-gold transition">Offres</a>
+                    <a href="#equipe" class="hover:text-latere-gold transition">Équipe</a>
+                    <a href="#publications" class="hover:text-latere-gold transition">Publications</a>
+                    <a href="#projets" class="hover:text-latere-gold transition">Projets</a>
+                    <a href="#journal" class="hover:text-latere-gold transition font-bold text-amber-300">Journal SCITERRA</a>
+                    <a href="#simulator" class="hover:text-latere-gold transition">Simulateur</a>
+                    <a href="#messages" class="hover:text-latere-gold transition flex items-center"><i class="fa-solid fa-inbox mr-1"></i> Inbox (<span id="msg-count">0</span>)</a>
+                    <a href="#edition" class="hover:text-latere-gold transition flex items-center"><i class="fa-solid fa-pen-to-square mr-1"></i> Édition</a>
+                    <a href="#contact" class="bg-latere-gold hover:bg-amber-500 text-latere-forest px-3 py-2 rounded-lg font-semibold transition">Solliciter</a>
+                </div>
+
+                <div class="xl:hidden flex items-center space-x-2">
+                    <a href="#journal" class="bg-amber-500 text-latere-forest text-xs px-2.5 py-2 rounded font-bold">SCITERRA</a>
+                    <a href="#messages" class="bg-latere-gold/20 text-latere-gold text-xs px-2.5 py-2 rounded font-bold"><i class="fa-solid fa-inbox"></i></a>
+                    <a href="#contact" class="bg-latere-gold text-latere-forest text-xs px-2.5 py-2 rounded font-bold">Solliciter</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION HERO / ACCUEIL -->
+    <section id="accueil" class="relative bg-latere-forest text-white py-24 border-b-4 border-latere-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block bg-latere-gold/20 text-latere-gold px-4 py-1.5 rounded-full text-sm font-semibold border border-latere-gold/30">
+                        Laboratoire de Recherche & d'Expertise
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                        LABORATOIRE DES TERRITOIRES ET DES ÉCOSYSTÈMES <span class="text-latere-gold">(LaTerE)</span>
+                    </h1>
+                    <p id="editable-slogan" class="text-amber-200 text-xl font-medium italic">
+                        « Rigueur scientifique, prospective territoriale et transformation socio-écologique. »
+                    </p>
+                    <p class="text-slate-200 text-base leading-relaxed">
+                        Le LaTerE développe des recherches interdisciplinaires sur les mutations spatiales, la gouvernance des ressources naturelles, la vulnérabilité environnementale et les dynamiques de crises et résilience.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#contact" class="bg-latere-gold hover:bg-amber-500 text-latere-forest font-bold px-6 py-3 rounded-lg transition shadow-lg">
+                            Solliciter nos services
+                        </a>
+                        <a href="#journal" class="bg-transparent border-2 border-white hover:border-latere-gold hover:text-latere-gold text-white font-semibold px-6 py-3 rounded-lg transition">
+                            Accéder au Journal SCITERRA
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 p-8 rounded-2xl backdrop-blur-md border border-white/20">
+                    <h3 class="text-2xl font-bold mb-4 text-latere-gold">Positionnement Stratégique</h3>
+                    <p class="text-slate-200 text-sm mb-6 leading-relaxed">
+                        Le LaTerE s'articule autour d'un **Triangle Scientifique** combinant l'analyse des vulnérabilités climatiques, les mutations territoriales et l'étude des crises pour accompagner la résilience communautaire.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3 bg-white/5 p-3 rounded-lg">
+                            <i class="fa-solid fa-seedling text-latere-gold text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Vulnérabilité & Climat</h4>
+                                <p class="text-xs text-slate-300">Adaptation agricole, agro-écologie et gestion des risques.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white/5 p-3 rounded-lg">
+                            <i class="fa-solid fa-map-location-dot text-latere-gold text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Dynamiques Territoriales</h4>
+                                <p class="text-xs text-slate-300">Urbanisation, One Health et justice environnementale.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white/5 p-3 rounded-lg">
+                            <i class="fa-solid fa-handshake-angle text-latere-gold text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm">Conflits & Résilience</h4>
+                                <p class="text-xs text-slate-300">Monitoring des crises, médiation et recherche sensible aux conflits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION AXES ET PROGRAMMES DE RECHERCHE -->
+    <section id="axes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-latere-forest">PROGRAMMES DE RECHERCHE STRUCTURANTS ET INTERCONNECTÉS</h2>
+                <div class="w-24 h-1 bg-latere-gold mx-auto my-4"></div>
+                <p class="text-slate-600">Notre laboratoire structure ses recherches autour de 3 axes fondamentaux et de leurs sous-programmes spécialisés.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- AXE I -->
+                <div class="bg-latere-sand rounded-2xl p-6 border border-slate-200 shadow-md">
+                    <div class="w-14 h-14 bg-latere-forest text-latere-gold rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-cloud-sun-rain"></i>
+                    </div>
+                    <span class="text-xs font-bold text-latere-clay uppercase tracking-wider">AXE I</span>
+                    <h3 class="text-xl font-bold text-latere-forest mb-4">Vulnérabilité climatique et résilience des systèmes agricoles</h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>1.1.</strong> Vulnérabilités socio-climatiques et adaptation</li>
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>1.2.</strong> Gestion des risques et catastrophes naturelles</li>
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>1.3.</strong> Agro-écologie et sécurité alimentaire</li>
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>1.4.</strong> Transition écologique et économie circulaire</li>
+                    </ul>
+                </div>
+
+                <!-- AXE II -->
+                <div class="bg-latere-sand rounded-2xl p-6 border border-slate-200 shadow-md">
+                    <div class="w-14 h-14 bg-latere-navy text-latere-gold rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <span class="text-xs font-bold text-latere-clay uppercase tracking-wider">AXE II</span>
+                    <h3 class="text-xl font-bold text-latere-forest mb-4">Dynamiques territoriales et santé environnementale</h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>2.1.</strong> Mutations territoriales et urbanisation</li>
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>2.2.</strong> One Health et éco-santé</li>
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>2.3.</strong> Gouvernance des ressources naturelles et justice environnementale</li>
+                    </ul>
+                </div>
+
+                <!-- AXE III -->
+                <div class="bg-latere-sand rounded-2xl p-6 border border-slate-200 shadow-md">
+                    <div class="w-14 h-14 bg-latere-clay text-white rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <span class="text-xs font-bold text-latere-clay uppercase tracking-wider">AXE III</span>
+                    <h3 class="text-xl font-bold text-latere-forest mb-4">Conflits, crises et résilience</h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>3.1.</strong> Analyse et monitoring des conflits</li>
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>3.2.</strong> Résilience communautaire et réadaptation aux crises</li>
+                        <li class="flex items-start"><i class="fa-solid fa-angle-right text-latere-gold mt-1 mr-2"></i><strong>3.3.</strong> Recherche sensible aux conflits et médiation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION OFFRES D'EXPERTISE ET DE RECHERCHE -->
+    <section id="offres" class="py-20 bg-slate-50 border-t border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-latere-forest">OFFRE D'EXPERTISE ET DE RECHERCHE</h2>
+                <div class="w-24 h-1 bg-latere-gold mx-auto my-4"></div>
+                <p class="text-slate-600">Le LaTerE met ses compétences scientifiques et techniques au service des institutions, ONG, bailleurs et acteurs locaux.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-latere-forest mb-3">Conduite des recherches et publication scientifique</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Réalisation d'enquêtes terrain mixtes, modélisation spatiale, collecte de données numérisées (KoboToolbox) et rédaction d'articles scientifiques et de rapports stratégiques.
+                    </p>
+                    <a href="#contact" class="inline-block bg-latere-forest text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition">
+                        Solliciter ce service
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-lg flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-latere-forest mb-3">Consultance et expertise</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Évaluation d'impact environnemental et social, audits institutionnels en sensibilité aux conflits, cartographie des vulnérabilités, accompagnement technique et formations sur-mesure.
+                    </p>
+                    <a href="#contact" class="inline-block bg-latere-forest text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-800 transition">
+                        Solliciter ce service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ÉQUIPE DE RECHERCHE -->
+    <section id="equipe" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-latere-forest">ÉQUIPE DE RECHERCHE</h2>
+                <div class="w-24 h-1 bg-latere-gold mx-auto my-4"></div>
+                <p class="text-slate-600">Des chercheurs pluridisciplinaires engagés pour le développement des territoires et des écosystèmes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Membre 1 : Aksanti -->
+                <div class="bg-latere-sand rounded-2xl p-6 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-latere-forest text-latere-gold rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                            AN
+                        </div>
+                        <h3 class="text-lg font-bold text-latere-forest">AKSANTI NTASIMA Hefsiba</h3>
+                        <p class="text-xs font-semibold text-latere-clay mb-3">Coordinateur du Laboratoire</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Socio-économie et planification du développement, Spécialité : économie politique rurale, gouvernance des ressources et dynamiques spatio-temporel des territoires ; analyse des conflits et sensibilité aux crises et résilience.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-300 pt-3 text-xs space-y-1">
+                        <p><i class="fa-solid fa-phone text-latere-forest mr-1"></i> 0975810225</p>
+                        <p><i class="fa-solid fa-envelope text-latere-forest mr-1"></i> <a href="mailto:aksantintasima@gmail.com" class="underline">aksantintasima@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <!-- Membre 2 : Bisimwa -->
+                <div class="bg-latere-sand rounded-2xl p-6 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-latere-navy text-latere-gold rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                            BK
+                        </div>
+                        <h3 class="text-lg font-bold text-latere-forest">BISIMWA KALUNGWE Séraphin</h3>
+                        <p class="text-xs font-semibold text-latere-clay mb-3">Chercheur | Candidat Docteur</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Master en Technologie et gestion des ressources naturelles (Dynamiques socio-environnementales, vulnérabilité des écosystèmes et gouvernance des ressources naturelles en contexte de conflits). Candidat Doctorat (ISDR Bukavu).
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-300 pt-3 text-xs space-y-1">
+                        <p><i class="fa-solid fa-phone text-latere-forest mr-1"></i> 0995428010</p>
+                        <p><i class="fa-solid fa-envelope text-latere-forest mr-1"></i> <a href="mailto:seraphibk2@gmail.com" class="underline">seraphibk2@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <!-- Membre 3 : Asifiwe -->
+                <div class="bg-latere-sand rounded-2xl p-6 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-emerald-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                            AK
+                        </div>
+                        <h3 class="text-lg font-bold text-latere-forest">ASIFIWE KADORHO Rodrigue</h3>
+                        <p class="text-xs font-semibold text-latere-clay mb-3">Chercheur Associé</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Master en Technologie et gestion des ressources naturelles (Gestion des eaux et forêts et bio-géochimie dans les systèmes agroforestiers du Sud-Kivu).
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-300 pt-3 text-xs space-y-1">
+                        <p><i class="fa-solid fa-phone text-latere-forest mr-1"></i> 0976352176</p>
+                        <p><i class="fa-solid fa-envelope text-latere-forest mr-1"></i> <a href="mailto:asrod2018@gmail.com" class="underline">asrod2018@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <!-- Membre 4 : Murhula -->
+                <div class="bg-latere-sand rounded-2xl p-6 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-amber-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-4">
+                            MM
+                        </div>
+                        <h3 class="text-lg font-bold text-latere-forest">MURHULA MWATE Irénée</h3>
+                        <p class="text-xs font-semibold text-latere-clay mb-3">Chercheur | Candidat Docteur</p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                            Master en Technologie et gestion des ressources naturelles (Gouvernance territoriale et des ressources naturelles ; socio-économie rurale). Candidat Doctorant, ISDR Bukavu.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-300 pt-3 text-xs space-y-1">
+                        <p><i class="fa-solid fa-phone text-latere-forest mr-1"></i> 0992697197</p>
+                        <p><i class="fa-solid fa-envelope text-latere-forest mr-1"></i> <a href="mailto:ireneemurhula89@gmail.com" class="underline">ireneemurhula89@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PUBLICATIONS ET PROJETS -->
+    <section id="publications" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-bold text-latere-forest mb-6 flex items-center">
+                        <i class="fa-solid fa-book-open text-latere-gold mr-3"></i> NOS PUBLICATIONS
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-xs bg-latere-forest/10 text-latere-forest font-bold px-2.5 py-1 rounded">Article Scientifique</span>
+                            <h4 class="font-bold text-slate-800 mt-2">Économie politique de l'accès à la terre et compétition pour les ressources</h4>
+                            <p class="text-xs text-slate-500 mt-1">Auteurs : Équipe LaTerE (2026)</p>
+                            <a href="#contact" class="inline-block mt-3 text-xs font-bold text-latere-forest hover:underline">Demander le tiré-à-part &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="projets">
+                    <h2 class="text-2xl font-bold text-latere-forest mb-6 flex items-center">
+                        <i class="fa-solid fa-diagram-project text-latere-gold mr-3"></i> PROJETS EN COURS
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-slate-800">Observatoire de la sensibilité aux conflits et résilience communautaire</h4>
+                                <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded font-bold">En cours</span>
+                            </div>
+                            <p class="text-xs text-slate-600 mt-2">Monitoring des dynamiques d'accès aux ressources naturelles et développement d'outils de médiation territoriale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION JOURNAL SCITERRA (STYLE ELSEVIER AVEC PAIEMENT, APPELS & REVUES) -->
+    <section id="journal" class="py-20 bg-latere-navy text-white border-t-4 border-latere-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-latere-gold text-latere-forest font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Revue Scientifique Internationale</span>
+                <h2 class="text-4xl font-extrabold mt-4 text-latere-gold">SCITERRA</h2>
+                <div class="w-24 h-1 bg-latere-gold mx-auto my-4"></div>
+                <p class="text-slate-200 text-sm italic">« Plateforme de publication scientifique en sciences de la terre, des territoires et des écosystèmes. »</p>
+            </div>
+
+            <!-- NAVIGATION INTERNE STYLE ELSEVIER -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10 bg-white/10 p-2 rounded-xl backdrop-blur-md">
+                <button onclick="switchJournalTab('apropos')" id="btn-apropos" class="journal-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-latere-gold text-latere-forest transition">À propos</button>
+                <button onclick="switchJournalTab('revues')" id="btn-revues" class="journal-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-transparent text-white hover:bg-white/10 transition">Nos Revues</button>
+                <button onclick="switchJournalTab('articles')" id="btn-articles" class="journal-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-transparent text-white hover:bg-white/10 transition">Articles publiés</button>
+                <button onclick="switchJournalTab('appels')" id="btn-appels" class="journal-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-transparent text-white hover:bg-white/10 transition">Appels en cours</button>
+                <button onclick="switchJournalTab('paiement')" id="btn-paiement" class="journal-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-transparent text-white hover:bg-white/10 transition">Frais & Paiement (85$)</button>
+                <button onclick="switchJournalTab('soumission')" id="btn-soumission" class="journal-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-transparent text-white hover:bg-white/10 transition">Soumission</button>
+            </div>
+
+            <!-- CONTENEUR DES ONGLETS DU JOURNAL -->
+            <div class="bg-white/10 p-8 rounded-2xl border border-white/20 backdrop-blur-md">
+                
+                <!-- ONGLET 1 : À PROPOS -->
+                <div id="jtab-apropos" class="journal-tab-content space-y-4">
+                    <h3 class="text-2xl font-bold text-latere-gold">À propos de SCITERRA</h3>
+                    <p class="text-slate-200 text-sm leading-relaxed">
+                        **SCITERRA** est une revue scientifique à comité de lecture éditée sous l'égide du LaTerE. Elle publie des recherches rigoureuses et notes méthodologiques. Confirmation de réception et évaluation initiale garanties sous **72 heures**.
+                    </p>
+                </div>
+
+                <!-- ONGLET 2 : NOS REVUES -->
+                <div id="jtab-revues" class="journal-tab-content space-y-6 hidden">
+                    <h3 class="text-2xl font-bold text-latere-gold">Sections et Revues Thématiques</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                            <h4 class="font-bold text-white mb-2">Climat, Agriculture & Résilience</h4>
+                            <p class="text-xs text-slate-300">Vulnérabilités socio-climatiques, agro-écologie et sécurité alimentaire.</p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                            <h4 class="font-bold text-white mb-2">Territoires & One Health</h4>
+                            <p class="text-xs text-slate-300">Mutations spatiales, urbanisation et gouvernance des ressources.</p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                            <h4 class="font-bold text-white mb-2">Conflits, Crises & Paix</h4>
+                            <p class="text-xs text-slate-300">Analyse des conflits, monitoring des crises et médiation territoriale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ONGLET 3 : ARTICLES PUBLIÉS (VIDE ACTUELLEMENT) -->
+                <div id="jtab-articles" class="journal-tab-content space-y-4 hidden">
+                    <h3 class="text-2xl font-bold text-latere-gold">Articles Publiés</h3>
+                    <div class="p-8 bg-white/5 rounded-xl border border-white/10 text-center space-y-2">
+                        <i class="fa-solid fa-folder-open text-latere-gold text-3xl"></i>
+                        <h4 class="text-base font-bold text-white">Aucun article publié pour le moment.</h4>
+                        <p class="text-xs text-slate-300">SCITERRA est une nouvelle revue en phase de réception de ses premiers manuscrits.</p>
+                    </div>
+                </div>
+
+                <!-- ONGLET 4 : APPELS EN COURS (GÉRABLE PAR LE GESTIONNAIRE) -->
+                <div id="jtab-appels" class="journal-tab-content space-y-6 hidden">
+                    <div class="flex justify-between items-center flex-wrap gap-4">
+                        <h3 class="text-2xl font-bold text-latere-gold">Appels à contributions actifs</h3>
+                        <button onclick="toggleCallModal()" class="bg-latere-gold text-latere-forest text-xs font-bold px-4 py-2 rounded-lg hover:bg-amber-500 transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Lancer un nouvel appel
+                        </button>
+                    </div>
+
+                    <!-- Formulaire caché pour publier un appel -->
+                    <div id="call-form-box" class="hidden bg-white/10 p-6 rounded-xl border border-latere-gold/40 space-y-4">
+                        <h4 class="font-bold text-white text-sm">Publier un nouvel appel (Article, Ouvrage, etc.)</h4>
+                        <input type="text" id="call-title" placeholder="Titre de l'appel (ex: Appel à contributions Numéro Spécial...)" class="w-full px-3 py-2 rounded bg-slate-900 border border-slate-700 text-xs text-white">
+                        <textarea id="call-desc" rows="3" placeholder="Description, conditions et date limite..." class="w-full px-3 py-2 rounded bg-slate-900 border border-slate-700 text-xs text-white"></textarea>
+                        <button onclick="publishCall()" class="bg-latere-gold text-latere-forest font-bold px-4 py-2 rounded text-xs">Publier l'appel sur le site</button>
+                    </div>
+
+                    <!-- Liste des appels -->
+                    <div id="calls-display-container" class="space-y-4">
+                        <div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center text-slate-300 text-xs">
+                            Aucun appel à contribution en cours pour le moment. Utilisez le bouton ci-dessus pour en lancer un.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ONGLET 5 : PAIEMENT (85$ AIRTEL MONEY) -->
+                <div id="jtab-paiement" class="journal-tab-content space-y-6">
+                    <h3 class="text-2xl font-bold text-latere-gold">Frais de Soumission et Publication</h3>
+                    <div class="bg-white/5 p-6 rounded-xl border border-latere-gold/40 space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-latere-gold text-latere-forest flex items-center justify-center font-bold rounded-lg text-xl">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Paiement via Airtel Money</h4>
+                                <p class="text-xs text-amber-200">Montant requis : <strong class="text-white text-sm">85 USD</strong></p>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/10 pt-4 space-y-2 text-xs text-slate-200">
+                            <p><strong>Numéro marchand / récepteur :</strong> <span class="text-amber-300 font-bold text-sm">0975810225</span></p>
+                            <p><strong>Nom du bénéficiaire :</strong> <span class="text-white font-bold">Aksanti Ntasima Hefsiba</span></p>
+                            <p class="text-slate-300 italic pt-2">Instructions : Après avoir effectué le transfert de 85$ via Airtel Money, veuillez remplir le formulaire de soumission en indiquant la référence de transaction dans votre message.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ONGLET 6 : SOUMISSION -->
+                <div id="jtab-soumission" class="journal-tab-content space-y-6 hidden">
+                    <h3 class="text-2xl font-bold text-latere-gold">Instructions & Soumission</h3>
+                    <p class="text-slate-200 text-sm">Confirmation de réception sous **72 heures**. N'oubliez pas d'inclure votre référence de paiement Airtel Money (85$) dans votre message de soumission.</p>
+                    <div class="pt-2">
+                        <a href="#contact" class="inline-block bg-latere-gold hover:bg-amber-500 text-latere-forest font-bold px-6 py-3 rounded-lg text-sm transition shadow-lg">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Procéder à la soumission
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION SIMULATEUR D'OFFRE -->
+    <section id="simulator" class="py-20 bg-latere-forest text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-latere-gold">SIMULATEUR DE BESOINS D'EXPERTISE</h2>
+                <p class="text-slate-200 text-sm mt-2">Estimez vos besoins d'intervention en 3 étapes simples.</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold text-amber-200 mb-2">1. Quel est votre domaine prioritaire ?</label>
+                    <select id="sim-domain" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-latere-gold">
+                        <option>Axe I : Vulnérabilité climatique & Systèmes agricoles</option>
+                        <option>Axe II : Dynamiques territoriales & Santé environnementale</option>
+                        <option>Axe III : Conflits, crises & Résilience</option>
+                        <option>Consultance & Expertise institutionnelle</option>
+                        <option>Publication dans le Journal SCITERRA (85$)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-amber-200 mb-2">2. Quel type de prestation recherchez-vous ?</label>
+                    <select id="sim-type" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-latere-gold">
+                        <option>Enquête de terrain & Collecte de données numérisées (KoboCollect)</option>
+                        <option>Audit en sensibilité aux conflits & médiation</option>
+                        <option>Évaluation d'impact environnemental et socio-économique</option>
+                        <option>Partenariat scientifique et recherche de long terme</option>
+                    </select>
+                </div>
+
+                <a href="#contact" onclick="transferSimulatorData()" class="block text-center bg-latere-gold hover:bg-amber-500 text-latere-forest font-bold py-3 rounded-lg transition shadow-lg">
+                    Valider et solliciter l'offre
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ONGLET MESSAGES (INBOX GESTIONNAIRE) -->
+    <section id="messages" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-latere-forest"><i class="fa-solid fa-inbox text-latere-gold mr-2"></i> Messages Reçus des Demandeurs</h2>
+                    <p class="text-slate-600 text-sm mt-1">Consultez ici les demandes de services et soumissions d'articles reçues.</p>
+                </div>
+                <button onclick="clearMessages()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition">
+                    Effacer l'historique
+                </button>
+            </div>
+
+            <div id="messages-container" class="space-y-4">
+                <div class="p-6 bg-latere-sand rounded-xl border border-slate-300 text-center text-slate-500">
+                    Aucun message enregistré pour le moment.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ONGLET ÉDITION (MODIFIER LE CONTENU DU SITE) -->
+    <section id="edition" class="py-20 bg-latere-sand border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-200">
+                <h2 class="text-3xl font-bold text-latere-forest mb-2"><i class="fa-solid fa-pen-to-square text-latere-gold mr-2"></i> Espace Édition du Site</h2>
+                <p class="text-slate-600 text-sm mb-6">Modifiez les textes clés directement depuis votre navigateur et sauvegardez-les instantanément.</p>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Modifier le Slogan principal</label>
+                        <input type="text" id="edit-slogan-input" value="« Rigueur scientifique, prospective territoriale et transformation socio-écologique. »" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-latere-forest">
+                    </div>
+                    <button onclick="saveSiteEdits()" class="bg-latere-forest hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-lg transition">
+                        Enregistrer les modifications
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULAIRE DE SOLLICITATION DE SERVICES -->
+    <section id="contact" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-latere-sand p-8 md:p-12 rounded-2xl shadow-xl border border-slate-200">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-latere-forest">SOLLICITER NOS SERVICES OU SOUMETTRE UN ARTICLE</h2>
+                    <p class="text-slate-600 text-sm mt-2">Transmis directement à <strong>aksantintasimah@gmail.com</strong> (Confirmation sous 72h). Mentionnez votre réf. Airtel Money (85$) si applicable.</p>
+                </div>
+
+                <form action="https://formspree.io/f/aksantintasimah@gmail.com" method="POST" onsubmit="captureMessage(event)" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Nom & Prénom / Institution *</label>
+                            <input type="text" id="form-name" name="nom" required placeholder="Votre nom ou organisation" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-latere-forest">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Adresse E-mail *</label>
+                            <input type="email" id="form-email" name="email" required placeholder="votre.email@exemple.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-latere-forest">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Service ou Motif de contact *</label>
+                        <select id="form-service" name="service" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-latere-forest">
+                            <option>Soumission d'article à SCITERRA (Paiement 85$ effectué)</option>
+                            <option>Conduite des recherches et publication scientifique</option>
+                            <option>Consultance et expertise</option>
+                            <option>Axe I : Vulnérabilité climatique et résilience des systèmes agricoles</option>
+                            <option>Axe II : Dynamiques territoriales et santé environnementale</option>
+                            <option>Axe III : Conflits, crises et résilience</option>
+                            <option>Partenariat académique / Projet de recherche</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Description / Référence de transaction Airtel Money (85$) / Résumé *</label>
+                        <textarea id="form-message" name="message" rows="5" required placeholder="Indiquez ici votre référence de transaction Airtel Money (0975810225) et les détails de votre demande..." class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-latere-forest"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-latere-forest hover:bg-slate-800 text-white font-bold py-4 rounded-lg shadow-lg transition duration-200">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Envoyer la demande / Soumettre
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <p class="font-bold text-white text-lg">Laboratoire des Territoires et des Écosystèmes (LaTerE) & SCITERRA</p>
+            <p class="text-sm">Contact direct : <a href="mailto:aksantintasimah@gmail.com" class="text-latere-gold underline">aksantintasimah@gmail.com</a> | Tél : 0975810225 (Airtel Money)</p>
+            <p class="text-xs text-slate-500">&copy; 2026 LaTerE & SCITERRA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS INTERACTIFS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadMessages();
+            loadEdits();
+            loadCalls();
+        });
+
+        // Gestion des onglets type Elsevier pour le Journal SCITERRA
+        function switchJournalTab(tabId) {
+            var tabs = document.querySelectorAll('.journal-tab-content');
+            tabs.forEach(function(t) { t.classList.add('hidden'); });
+
+            var buttons = document.querySelectorAll('.journal-tab-btn');
+            buttons.forEach(function(b) { 
+                b.classList.remove('bg-latere-gold', 'text-latere-forest'); 
+                b.classList.add('bg-transparent', 'text-white'); 
+            });
+
+            document.getElementById('jtab-' + tabId).classList.remove('hidden');
+            var activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-transparent', 'text-white');
+            activeBtn.classList.add('bg-latere-gold', 'text-latere-forest');
+        }
+
+        // Gestion des appels en cours (publication par le gestionnaire)
+        function toggleCallModal() {
+            var box = document.getElementById('call-form-box');
+            box.classList.toggle('hidden');
+        }
+
+        function publishCall() {
+            var title = document.getElementById('call-title').value;
+            var desc = document.getElementById('call-desc').value;
+            if(!title || !desc) {
+                alert("Veuillez remplir tous les champs de l'appel.");
+                return;
+            }
+            var date = new Date().toLocaleDateString();
+            var newCall = { title, desc, date };
+
+            var calls = JSON.parse(localStorage.getItem('latere_calls') || '[]');
+            calls.unshift(newCall);
+            localStorage.setItem('latere_calls', JSON.stringify(calls));
+
+            document.getElementById('call-title').value = '';
+            document.getElementById('call-desc').value = '';
+            document.getElementById('call-form-box').classList.add('hidden');
+            loadCalls();
+            alert("Appel publié avec succès sur le site !");
+        }
+
+        function loadCalls() {
+            var calls = JSON.parse(localStorage.getItem('latere_calls') || '[]');
+            var container = document.getElementById('calls-display-container');
+            if(calls.length === 0) {
+                container.innerHTML = '<div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center text-slate-300 text-xs">Aucun appel à contribution en cours pour le moment. Utilisez le bouton ci-dessus pour en lancer un.</div>';
+                return;
+            }
+            var html = '';
+            calls.forEach(function(c, index) {
+                html += `
+                    <div class="bg-white/5 p-5 rounded-xl border border-white/10 space-y-2">
+                        <div class="flex justify-between items-center text-xs text-amber-200">
+                            <strong>${c.title}</strong>
+                            <span>Publié le : ${c.date}</span>
+                        </div>
+                        <p class="text-xs text-slate-200">${c.desc}</p>
+                        <div class="pt-2 flex justify-end space-x-2">
+                            <a href="#contact" onclick="setServiceCall('${c.title}')" class="bg-latere-gold text-latere-forest text-xs px-3 py-1.5 rounded font-bold hover:bg-amber-500">Soumettre à cet appel</a>
+                            <button onclick="deleteCall(${index})" class="bg-red-600 text-white text-xs px-2 py-1 rounded">Supprimer</button>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function deleteCall(index) {
+            var calls = JSON.parse(localStorage.getItem('latere_calls') || '[]');
+            calls.splice(index, 1);
+            localStorage.setItem('latere_calls', JSON.stringify(calls));
+            loadCalls();
+        }
+
+        function setServiceCall(callTitle) {
+            var select = document.getElementById('form-service');
+            select.value = "Soumission d'article à SCITERRA (Paiement 85$ effectué)";
+            var msg = document.getElementById('form-message');
+            msg.value = "Réponse à l'appel : " + callTitle + "\nRéférence Airtel Money (0975810225 - 85$) : ";
+        }
+
+        function transferSimulatorData() {
+            var domain = document.getElementById('sim-domain').value;
+            var type = document.getElementById('sim-type').value;
+            var messageField = document.getElementById('form-message');
+            if(messageField) {
+                messageField.value = "Demande issue du simulateur :\n- Domaine : " + domain + "\n- Prestation : " + type + "\n\nPrécisions complémentaires : ";
+            }
+        }
+
+        function captureMessage(e) {
+            var name = document.getElementById('form-name').value;
+            var email = document.getElementById('form-email').value;
+            var service = document.getElementById('form-service').value;
+            var message = document.getElementById('form-message').value;
+            var date = new Date().toLocaleString();
+
+            var newMsg = { name, email, service, message, date };
+            var messages = JSON.parse(localStorage.getItem('latere_messages') || '[]');
+            messages.unshift(newMsg);
+            localStorage.setItem('latere_messages', JSON.stringify(messages));
+        }
+
+        function loadMessages() {
+            var messages = JSON.parse(localStorage.getItem('latere_messages') || '[]');
+            var container = document.getElementById('messages-container');
+            document.getElementById('msg-count').innerText = messages.length;
+
+            if(messages.length === 0) {
+                container.innerHTML = '<div class="p-6 bg-latere-sand rounded-xl border border-slate-300 text-center text-slate-500">Aucun message enregistré pour le moment.</div>';
+                return;
+            }
+
+            var html = '';
+            messages.forEach(function(msg) {
+                html += `
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="flex justify-between items-center text-xs text-slate-500 border-b pb-2">
+                            <span><strong>De :</strong> ${msg.name} (<a href="mailto:${msg.email}" class="text-latere-forest underline">${msg.email}</a>)</span>
+                            <span>${msg.date}</span>
+                        </div>
+                        <p class="text-xs font-semibold text-latere-clay">Motif / Service : ${msg.service}</p>
+                        <p class="text-sm text-slate-700 bg-slate-50 p-3 rounded">${msg.message}</p>
+                        <div class="pt-2 flex justify-end">
+                            <a href="mailto:${msg.email}?subject=Réponse à votre soumission - SCITERRA" class="bg-latere-forest text-white text-xs px-3 py-1.5 rounded font-bold hover:bg-slate-800">
+                                <i class="fa-solid fa-reply mr-1"></i> Répondre par Email (Confirmation 72h)
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function clearMessages() {
+            if(confirm("Voulez-vous vraiment effacer tous les messages enregistrés ?")) {
+                localStorage.removeItem('latere_messages');
+                loadMessages();
+            }
+        }
+
+        function saveSiteEdits() {
+            var slogan = document.getElementById('edit-slogan-input').value;
+            localStorage.setItem('latere_slogan', slogan);
+            document.getElementById('editable-slogan').innerText = slogan;
+            alert("Modifications enregistrées avec succès sur le site !");
+        }
+
+        function loadEdits() {
+            var slogan = localStorage.getItem('latere_slogan');
+            if(slogan) {
+                document.getElementById('editable-slogan').innerText = slogan;
+                document.getElementById('edit-slogan-input').value = slogan;
+            }
+        }
+    </script>
+</body>
+</html>
